@@ -5,15 +5,13 @@ metadata:
   namespace: default
 spec:
   podSelector:
-    - podSelector:
-        matchLabels:
-          app: frontend
-          app: backend
+    matchLabels:
+      role: db
   policyTypes:
   - Ingress
   - Egress
   ingress:
-  - form: 
+  - from:
     - podSelector:
         matchLabels:
           app: frontend
@@ -24,4 +22,3 @@ spec:
         matchLabels:
           app: frontend
           app: backend
-
