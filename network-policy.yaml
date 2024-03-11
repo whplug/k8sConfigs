@@ -6,7 +6,7 @@ metadata:
 spec:
   podSelector:
     matchLabels:
-      role: db
+      app: frontend
   policyTypes:
   - Ingress
   - Egress
@@ -14,11 +14,9 @@ spec:
   - from:
     - podSelector:
         matchLabels:
-          app: frontend
           app: backend
   egress:
   - to:
     - podSelector:
         matchLabels:
-          app: frontend
           app: backend
